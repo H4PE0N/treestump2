@@ -21,5 +21,10 @@
 #include "engine-point-values.h"
 #include "engine-point-macros.h"
 #include "chess-engine-macros.h"
+#include "move-struct-handler.h"
+#include "piece-struct-handler.h"
+#include "execute-chess-moves.h"
+#include "ident-board-moves.h"
+#include "chess-game-actions.h"
 
 #endif

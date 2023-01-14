@@ -20,6 +20,18 @@ typedef struct Piece
 
 typedef int Point;
 
+typedef enum MFlag
+{
+	MFLAG_NONE, MFLAG_KNIGHT, MFLAG_BISHOP, MFLAG_ROOK, MFLAG_QUEEN, MFLAG_DOUBLE, MFLAG_CASTLE, MFLAG_PASSANT
+} MFlag;
+
+typedef struct Move
+{
+	Point start;
+	Point stop;
+	MFlag flag;
+} Move;
+
 typedef struct State
 {
   Team current;

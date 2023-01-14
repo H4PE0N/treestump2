@@ -22,8 +22,8 @@ extern const int BLACK_PAWN_RANK;
 
 extern const int KING_START_FILE;
 
-extern const int KSIDE_FILE_OFFSET;
-extern const int QSIDE_FILE_OFFSET;
+extern const int KSIDE_OFFSET;
+extern const int QSIDE_OFFSET;
 
 extern const Point WHITE_KING_POINT;
 extern const Point BLACK_KING_POINT;
@@ -32,6 +32,9 @@ extern const Point WROOK_QSIDE_POINT;
 extern const Point WROOK_KSIDE_POINT;
 extern const Point BROOK_QSIDE_POINT;
 extern const Point BROOK_KSIDE_POINT;
+
+extern const int WHITE_PASSANT_RANK;
+extern const int BLACK_PASSANT_RANK;
 
 extern const Piece PIECE_NONE;
 
