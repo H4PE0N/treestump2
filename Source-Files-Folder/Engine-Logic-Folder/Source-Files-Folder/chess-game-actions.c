@@ -7,9 +7,9 @@ bool move_chess_piece(Piece* board, State* state, Move move)
 
 	if(!correct_move_flag(&move, board, *state)) return false;
 
-	// if(!move_fully_legal(board, *state, move)) return false;
-	//
-	// return execute_chess_move(board, info, move);
+	if(!move_fully_legal(board, *state, move)) return false;
+
+	return execute_chess_move(board, state, move);
 
 	return false;
 }

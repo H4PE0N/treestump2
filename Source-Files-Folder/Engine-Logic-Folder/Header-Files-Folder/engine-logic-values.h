@@ -38,6 +38,8 @@ extern const int BLACK_PASSANT_RANK;
 
 extern const Piece PIECE_NONE;
 
+extern const Move MOVE_NONE;
+
 extern const int WHITE_KSIDE;
 extern const int WHITE_QSIDE;
 extern const int BLACK_KSIDE;

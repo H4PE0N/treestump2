@@ -7,16 +7,18 @@ bool print_console_board(const Piece board[])
 {
 	for(Point point = 0; point < BOARD_POINTS; point += 1)
 	{
-    char symbol = chess_piece_symbol(board[point]);
-
-    int rank = POINT_RANK_MACRO(point);
+		int rank = POINT_RANK_MACRO(point);
     int file = POINT_FILE_MACRO(point);
 
-    if(file == 0) printf("%d ", (BOARD_RANKS - rank));
+		if(file == 0) printf("%d ", (BOARD_RANKS - rank));
 
-    if(file == 7) printf("%c\n", symbol);
+    char symbol = chess_piece_symbol(board[point]);
 
-    else printf("%c ", symbol);
+		if(symbol == SYMBOL_NONE) printf("  ");
+
+		else printf("%c ", symbol);
+
+  	if(file == 7) printf("\n");
 	}
   printf("  A B C D E F G H\n"); return true;
 }
@@ -44,7 +46,7 @@ int main(int argc, char* argv[])
     return false;
   }
 
-  print_console_board(board);
+	print_console_board(board);
 
   print_console_state(state);
 

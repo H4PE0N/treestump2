@@ -26,8 +26,4 @@ bool execute_promote_move(Piece* board, Move move);
 
 bool execute_castle_move(Piece* board, Move move);
 
-Point castle_rook_point(Move castleMove);
-
-Point castle_middle_point(Move castleMove);
-
 #endif

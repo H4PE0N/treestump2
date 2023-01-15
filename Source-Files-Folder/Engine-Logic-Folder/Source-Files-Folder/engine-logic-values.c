@@ -37,6 +37,8 @@ const int KING_FILE = 0b100;
 
 const Piece PIECE_NONE = {.type = TYPE_NONE, .team = TEAM_NONE};
 
+const Move MOVE_NONE = {.start = -1, .stop = -1, .flag = MFLAG_NONE};
+
 const int WHITE_KSIDE = 0b1000;
 const int WHITE_QSIDE = 0b0100;
 const int BLACK_KSIDE = 0b0010;

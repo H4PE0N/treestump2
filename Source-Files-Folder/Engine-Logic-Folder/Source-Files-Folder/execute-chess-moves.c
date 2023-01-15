@@ -23,7 +23,7 @@ void update_state_values(State* state, const Piece board[], Move move)
 {
 	if(state->current == TEAM_BLACK) state->turns += 1;
 
-	state->current = chess_team_enemy(state->current);
+	state->current = piece_team_enemy(state->current);
 
 	bool stopExists = chess_piece_exists(board[move.stop]);
 
@@ -167,34 +167,4 @@ bool execute_castle_move(Piece* board, Move move)
 	board[startRook] = PIECE_NONE;
 
 	return true;
-}
-
-Point castle_rook_point(Move castleMove)
-{
-	int movePatt = (castleMove.stop - castleMove.start);
-
-	if((castleMove.start == WHITE_KING_POINT) && (movePatt == KSIDE_OFFSET))
-		return WROOK_KSIDE_POINT;
-
-	if((castleMove.start == WHITE_KING_POINT) && (movePatt == QSIDE_OFFSET))
-		return WROOK_QSIDE_POINT;
-
-	if((castleMove.start == BLACK_KING_POINT) && (movePatt == KSIDE_OFFSET))
-		return BROOK_KSIDE_POINT;
-
-	if((castleMove.start == BLACK_KING_POINT) && (movePatt == QSIDE_OFFSET))
-		return BROOK_QSIDE_POINT;
-
-	return POINT_NONE;
-}
-
-Point castle_middle_point(Move castleMove)
-{
-	int kingFile = POINT_FILE_MACRO(castleMove.start);
-	int kingRank = POINT_RANK_MACRO(castleMove.start);
-
-	int fileOffset = normal_file_offset(castleMove);
-	int fileFactor = MOVE_OFFSET_FACTOR(fileOffset);
-
-	return RANK_FILE_POINT(kingRank, (kingFile + fileFactor));
 }

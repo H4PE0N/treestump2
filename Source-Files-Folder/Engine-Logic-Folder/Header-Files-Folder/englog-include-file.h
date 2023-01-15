@@ -26,5 +26,13 @@
 #include "execute-chess-moves.h"
 #include "ident-board-moves.h"
 #include "chess-game-actions.h"
+#include "chess-moves-legal.h"
+#include "move-patterns-valid.h"
+#include "move-prevent-check.h"
+#include "move-ability-valid.h"
+#include "move-pattern-handler.h"
+#include "move-pattern-fits.h"
+#include "game-boolean-logic.h"
+#include "piece-pattern-moves.h"
 
 #endif
