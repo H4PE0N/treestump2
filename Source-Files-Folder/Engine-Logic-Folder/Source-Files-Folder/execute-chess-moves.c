@@ -33,7 +33,7 @@ void update_state_values(State* state, const Piece board[], Move move)
 
 	if(move.flag != MFLAG_DOUBLE) state->passant = 0;
 
-	else {} // alloc_passant_point(state, move);
+	else state->passant = (POINT_FILE_MACRO(move.start) + 1);
 
 	moved_reset_castle(state, board, move);
 }
@@ -57,10 +57,10 @@ bool reset_king_ability(State* state, Piece kingPiece)
 	if(kingPiece.type != TYPE_KING) return false;
 
 	if(kingPiece.team == TEAM_WHITE)
-		state->castle = CLEAR_WHITE_CASTLE(state->castle);
+		state->castles = CLEAR_WHITE_CASTLE(state->castles);
 
 	else if(kingPiece.team == TEAM_BLACK)
-		state->castle = CLEAR_BLACK_CASTLE(state->castle);
+		state->castles = CLEAR_BLACK_CASTLE(state->castles);
 
 	else return false;
 
@@ -72,16 +72,16 @@ bool reset_rook_ability(State* state, Piece rookPiece, Point rookPoint)
 	if(rookPiece.type != TYPE_ROOK) return false;
 
 	if(rookPoint == WROOK_QSIDE_POINT)
-		state->castle = CLEAR_WHITE_QSIDE(state->castle);
+		state->castles = CLEAR_WHITE_QSIDE(state->castles);
 
 	else if(rookPoint == WROOK_KSIDE_POINT)
-		state->castle = CLEAR_WHITE_KSIDE(state->castle);
+		state->castles = CLEAR_WHITE_KSIDE(state->castles);
 
 	else if(rookPoint == BROOK_QSIDE_POINT)
-		state->castle = CLEAR_BLACK_QSIDE(state->castle);
+		state->castles = CLEAR_BLACK_QSIDE(state->castles);
 
 	else if(rookPoint == BROOK_KSIDE_POINT)
-		state->castle = CLEAR_BLACK_KSIDE(state->castle);
+		state->castles = CLEAR_BLACK_KSIDE(state->castles);
 
 	else return false;
 

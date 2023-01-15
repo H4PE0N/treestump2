@@ -34,5 +34,7 @@
 #include "move-pattern-fits.h"
 #include "game-boolean-logic.h"
 #include "piece-pattern-moves.h"
+#include "point-struct-handler.h"
+#include "create-string-board.h"
 
 #endif

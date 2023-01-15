@@ -35,7 +35,7 @@ typedef struct Move
 typedef struct State
 {
   Team current;
-  int castle;
+  int castles;
   Point passant;
   int clock;
   int turns;

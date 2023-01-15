@@ -3,6 +3,8 @@
 
 bool piece_pattern_moves(Move** moves, int* moveAmount, const Piece board[], Point piecePoint)
 {
+  if(!POINT_INSIDE_BOARD(piecePoint)) return false;
+
   if(board[piecePoint].type == TYPE_PAWN)
     return pawn_pattern_moves(moves, moveAmount, board, piecePoint);
 

@@ -37,7 +37,7 @@ bool piece_teams_team(Team team1, Team team2)
 
 bool board_points_enemy(const Piece board[], Point point1, Point point2)
 {
-  return piece_teams_team(board[point1].team, board[point2].team);
+  return piece_teams_enemy(board[point1].team, board[point2].team);
 }
 
 bool piece_teams_enemy(Team team1, Team team2)
@@ -47,19 +47,6 @@ bool piece_teams_enemy(Team team1, Team team2)
   bool whiteBool = ((team1 == TEAM_WHITE) && (team2 == TEAM_BLACK));
 
   return (blackBool || whiteBool);
-}
-
-Point board_king_point(const Piece board[], Team team)
-{
-	Piece kingPiece = {.type = TYPE_KING, .team = team};
-
-	for(int index = 0; index < BOARD_POINTS; index += 1)
-	{
-		Point point = (team == TEAM_WHITE) ? (BOARD_POINTS - index - 1) : index;
-
-    if(comp_chess_pieces(board[point], kingPiece)) return point;
-	}
-	return POINT_NONE;
 }
 
 bool comp_chess_pieces(Piece piece1, Piece piece2)

@@ -16,8 +16,6 @@ bool board_points_enemy(const Piece board[], Point point1, Point point2);
 
 bool piece_teams_enemy(Team team1, Team team2);
 
-Point board_king_point(const Piece board[], Team team);
-
 bool comp_chess_pieces(Piece piece1, Piece piece2);
 
 Piece* copy_chess_board(const Piece board[]);

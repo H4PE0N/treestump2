@@ -110,7 +110,7 @@ bool parse_string_castles(State* state, const char strToken[], int strLength)
 	{
 		if(!parse_castle_symbol(&castle, strToken[index])) return false;
 	}
-	state->castle = castle; return true;
+	state->castles = castle; return true;
 }
 
 bool parse_castle_symbol(int* castle, char symbol)

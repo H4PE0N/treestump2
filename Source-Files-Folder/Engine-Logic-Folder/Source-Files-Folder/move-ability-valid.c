@@ -19,16 +19,16 @@ bool castle_ability_valid(Move move, State state)
 	int movePatt = (move.stop - move.start);
 
 	if((move.start == WHITE_KING_POINT) && (movePatt == KSIDE_OFFSET))
-		return (MASK_WHITE_KSIDE(state.castle) == WHITE_KSIDE);
+		return (MASK_WHITE_KSIDE(state.castles) == WHITE_KSIDE);
 
 	if((move.start == WHITE_KING_POINT) && (movePatt == QSIDE_OFFSET))
-		return (MASK_WHITE_QSIDE(state.castle) == WHITE_QSIDE);
+		return (MASK_WHITE_QSIDE(state.castles) == WHITE_QSIDE);
 
 	if((move.start == BLACK_KING_POINT) && (movePatt == KSIDE_OFFSET))
-		return (MASK_BLACK_KSIDE(state.castle) == BLACK_KSIDE);
+		return (MASK_BLACK_KSIDE(state.castles) == BLACK_KSIDE);
 
 	if((move.start == BLACK_KING_POINT) && (movePatt == QSIDE_OFFSET))
-		return (MASK_BLACK_QSIDE(state.castle) == BLACK_QSIDE);
+		return (MASK_BLACK_QSIDE(state.castles) == BLACK_QSIDE);
 
 	return false;
 }
